@@ -16,6 +16,9 @@ namespace NetCoreFundamentos
             this.txtNombre.Width = 200;
             this.txtNombre.TextAlign = HorizontalAlignment.Right;
             this.txtNombre.BackColor = Color.Green;
+
+            string textoNumero = "Hoy es viernes";
+            int numero = int.Parse(textoNumero);
         }
     }
 }
