@@ -59,9 +59,43 @@ namespace NetCoreFundamentos
 
         private void btnSubir_Click(object sender, EventArgs e)
         {
-            string aux = this.lstAlmacen.SelectedItem.ToString();
-            this.lstAlmacen.SelectedItem = this.lstAlmacen.Items[this.lstAlmacen.SelectedIndex - 1];
-            this.lstAlmacen.Items[this.lstAlmacen.SelectedIndex - 1] = aux;
+            int index = this.lstAlmacen.SelectedIndex;
+            string producto = this.lstAlmacen.SelectedItem.ToString();
+            this.lstAlmacen.Items.RemoveAt(index);
+            this.lstAlmacen.Items.Insert(index - 1, producto);
+            this.lstAlmacen.SelectedIndex = index - 1;
+        }
+
+        private void lstAlmacen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = this.lstAlmacen.SelectedIndex;
+            if (index == 0)
+            {
+                this.btnSubir.Enabled = false;
+            }
+            else
+            {
+                this.btnSubir.Enabled = true;
+                
+            }
+            if (index == this.lstAlmacen.Items.Count-1)
+            {
+                this.btnBajar.Enabled = false;
+            }
+            else
+            {
+                this.btnBajar.Enabled = true;
+            }
+        }
+
+        private void btnBajar_Click(object sender, EventArgs e)
+        {
+            int index = this.lstAlmacen.SelectedIndex;
+            string producto = this.lstAlmacen.SelectedItem.ToString();
+            this.lstAlmacen.Items.RemoveAt(index);
+            this.lstAlmacen.Items.Insert(index + 1, producto);
+            this.lstAlmacen.SelectedIndex = index + 1;
+
         }
     }
 }

@@ -133,6 +133,7 @@
             lstAlmacen.Name = "lstAlmacen";
             lstAlmacen.Size = new Size(120, 124);
             lstAlmacen.TabIndex = 9;
+            lstAlmacen.SelectedIndexChanged += lstAlmacen_SelectedIndexChanged;
             // 
             // btnBajar
             // 
@@ -142,6 +143,7 @@
             btnBajar.TabIndex = 11;
             btnBajar.Text = "Bajar";
             btnBajar.UseVisualStyleBackColor = true;
+            btnBajar.Click += btnBajar_Click;
             // 
             // btnSubir
             // 
